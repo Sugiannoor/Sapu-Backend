@@ -6,6 +6,7 @@ import "./css/beranda.css";
 import { BsCashCoin } from "react-icons/bs";
 import {LuPalmtree} from 'react-icons/lu'
 import {MdOutlineProductionQuantityLimits} from 'react-icons/md'
+import ArtikelSampah from "./components/ArtikelSampah";
 
 const Beranda = () => {
   return (
@@ -58,11 +59,12 @@ const Beranda = () => {
                     <MdOutlineProductionQuantityLimits size={30} color="white"/>
                     </div>
                     <div className="deskripsi-fitur-beranda">
-                        Membantu Membuat Product Baru
+                        Membantu Membuat Produk Baru
                     </div>
                 </div> 
             </div>
         </div>
+        <ArtikelSampah/>
       </div>
       <FooterComponent />
     </>

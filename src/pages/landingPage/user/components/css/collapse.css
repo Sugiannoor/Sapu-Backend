@@ -1,0 +1,9 @@
+/* Style Untuk Collapse.Jsx */
+
+@media (max-width: 576px) {
+    div.carousel-item {
+        height: 50vh;
+        object-fit: cover;
+        object-position: center;
+    }
+}

@@ -2,7 +2,7 @@ import React from 'react'
 import "./button.css"
 const ButtonElement = ({handleClick, isLoading, ...rest}) => {
   return (
-    <div>
+    <span>
         <button
         {...rest}
             type= {rest.type}
@@ -16,7 +16,7 @@ const ButtonElement = ({handleClick, isLoading, ...rest}) => {
         {rest.children}
         </button>
         
-    </div>
+    </span>
   )
 }
 export default ButtonElement;

@@ -1,5 +1,5 @@
 
-
+import './css/collapse.css'
 const Collapse = () => {
   return (
     <>
