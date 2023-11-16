@@ -1,0 +1,18 @@
+h4.header-yuk {
+    color: #116530;
+    font-weight: 700;
+    font-size: 2rem;
+}
+div.card-sapu-yuk {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2) !important;
+    background-color: #D0F5BE
+}
+
+div.icon-yuk {
+    display: flex;
+    align-items: center;
+}
+div.deskripsi-yuk {
+    font-weight: 500;
+    font-size: 16px;
+}

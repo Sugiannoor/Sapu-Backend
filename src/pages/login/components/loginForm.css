@@ -1,0 +1,16 @@
+.form-group.has-icon-right {
+    width: 30rem;
+    display: flex;
+}
+.form-control-icon {
+    padding-top: 5px ;
+}
+.form-control-icon {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 547px) {
+    .form-group.has-icon-right {
+      width: 18rem;
+    }
+  }

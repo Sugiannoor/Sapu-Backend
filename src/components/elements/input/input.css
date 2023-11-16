@@ -1,0 +1,18 @@
+.label-input {
+  font-weight: 500;
+  color: #116530 !important;
+}
+  
+  .form-input {
+    height: 42px !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2) !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    color: #116530 !important;
+    outline: #116530 !important;
+    background-color:  #E8E8CC !important;
+    border-color: #116530 !important; /* Ganti warna border */
+
+  }
+

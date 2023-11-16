@@ -1,0 +1,19 @@
+footer img {
+    width: 90px;
+    height: 70px;
+    display: block;
+
+}
+footer {
+    width: 100%;
+    height: 100px;
+    background-color: #116530;
+    display: block;
+    margin-top: 30px;
+}
+
+footer span {
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+}

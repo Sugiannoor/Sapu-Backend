@@ -1,0 +1,11 @@
+.header-register .text-success {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+body {
+    background-color: #E8E8CC !important;
+}
+
+.card {
+    border-radius: 50px;
+}

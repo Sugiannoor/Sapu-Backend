@@ -1,0 +1,21 @@
+span.icon-maps {
+    background-color: #116530;
+    height: 50px;
+    padding: 5px;
+    width: 50px;
+    border-radius: 10px;
+
+}
+p.maps-header {
+    font-weight: 700;
+    margin-bottom:-1px;
+}
+div.card-maps {
+    height: 175px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2) !important;
+}
+h4.header-contact {
+    font-weight: 700;
+    font-size: 2rem;
+}
+

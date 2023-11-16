@@ -1,0 +1,40 @@
+img.gambar-hero-beranda {
+    width: 50%;
+    object-fit: cover;
+    border-radius: 10px;
+
+}
+h1.header-beranda {
+    color:#116530;
+
+}
+div.icon-fitur-beranda {
+    height: 45px;
+    width: 50px;
+    background-color: #116530;
+    padding: 10px;
+    border-radius: 4px;
+    top: -20px;
+    left: 30%;
+}
+div.deskripsi-fitur-beranda {
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+@media (max-width: 576px) {
+    h1.header-beranda {
+        font-size: 1.4rem;
+    }
+    p.deskripsi-beranda {
+        font-size: 0.8rem;
+    }
+    img.gambar-hero-beranda {
+    height: 50vh;
+
+}
+div.card-fitur.d-flex {
+    flex-direction: column;
+}
+
+}
