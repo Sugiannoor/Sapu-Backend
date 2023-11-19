@@ -7,6 +7,7 @@ import { BsCashCoin } from "react-icons/bs";
 import {LuPalmtree} from 'react-icons/lu'
 import {MdOutlineProductionQuantityLimits} from 'react-icons/md'
 import ArtikelSampah from "./components/ArtikelSampah";
+import CardItem from "./components/cardItem";
 
 const Beranda = () => {
   return (
@@ -65,6 +66,7 @@ const Beranda = () => {
             </div>
         </div>
         <ArtikelSampah/>
+        <CardItem/>
       </div>
       <FooterComponent />
     </>
