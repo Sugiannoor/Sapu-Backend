@@ -13,7 +13,7 @@ const ArtikelSampah = () => {
         bersama-sama menciptakan perubahan positif bagi planet ini, satu langkah
         kecil pada satu waktu!
       </article>
-      <div className="gambar-sampah row mt-5">
+      <div id="kirim-sampah" className="gambar-sampah row mt-5">
         <div className="col-4">
         <img className="gambar-sampah "src="./src/assets/kardus.webp" alt="gambar kardus" />
         </div>
