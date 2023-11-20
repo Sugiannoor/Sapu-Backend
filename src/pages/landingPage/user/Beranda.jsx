@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+
 import { ButtonElement } from "../../../components/elements/button";
 import FooterComponent from "../../../components/elements/footer/FooterComponent";
 import { NavbarComponent } from "../../../components/navbar";
@@ -10,6 +10,15 @@ import ArtikelSampah from "./components/ArtikelSampah";
 import CardItem from "./components/cardItem";
 
 const Beranda = () => {
+  const handleClick = () => {
+    // Mendapatkan referensi elemen yang diinginkan
+    const kirimSampahSection = document.getElementById('kirim-sampah');
+
+    if (kirimSampahSection) {
+      kirimSampahSection.scrollIntoView({ behavior: 'smooth', });
+    }
+  };
+
   return (
     <>
       <NavbarComponent/>
@@ -24,9 +33,7 @@ const Beranda = () => {
               Raih Penghasilan tambahan dan Tingkatkan Lingkungan Bersih
             </h1>
             <p className="deskripsi-beranda">Yuk Sapu lingkungan kita!</p>
-            <Link to="/login">
-              <ButtonElement className="btn btn-success">Mulai</ButtonElement>
-            </Link>
+              <ButtonElement className="btn btn-success" handleClick={handleClick}>Mulai</ButtonElement>
           </div>
         </div>  
       </div>
