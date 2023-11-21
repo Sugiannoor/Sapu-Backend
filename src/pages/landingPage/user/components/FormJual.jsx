@@ -5,8 +5,10 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import Modal from "../../../../components/elements/modal/Modal";
 
 const FormJual = () => {
+  const [modalShow, setModalShow] = useState(false);
   const [loading, setLoading] = useState(true);
   const { idBarang } = useParams();
   const navigate = useNavigate();
@@ -49,10 +51,32 @@ const FormJual = () => {
       [name]: value,
     }));
   };
+  const hideModal = () => {
+    setModalShow(false);
+  };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Tambahkan logika untuk mengirim data form ke API atau melakukan operasi lainnya sesuai kebutuhan
+    setLoading(true);
+    try {
+      const response = await axios.post("URL_API_ANDA", formData);
+      console.log("Data berhasil dikirim:", response.data);
+      setLoading(false);
+
+    } catch (error) {
+      console.error("Error mengirim data:", error);
+      setLoading(false);
+    }
+    setModalShow(false);
+  };
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    if (formData.alamat === "" || formData.jumlah === "") {
+      setModalShow(false);
+    } else {
+      setModalShow(true);
+    }
   };
 
   return (
@@ -75,7 +99,7 @@ const FormJual = () => {
             </div>
           )}
 
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleClick}>
             <InputElement
               label="Nama Penjual"
               type="text"
@@ -125,6 +149,8 @@ const FormJual = () => {
               value={formData.jumlah === undefined ? "" : formData.jumlah}
               className="mb-2"
               onChange={handleChange}
+              placeholder={0}
+              required
             />
             <div
               className="text-end mt-5"
@@ -134,7 +160,6 @@ const FormJual = () => {
             </div>
 
             <ButtonElement
-              handleClick={handleSubmit}
               type="submit"
               className="btn btn-success"
               isLoading={false}
@@ -150,6 +175,67 @@ const FormJual = () => {
               Kembali
             </ButtonElement>
           </form>
+          {modalShow && (
+            <Modal
+              show={modalShow}
+              onHide={hideModal}
+              size={"lg"}
+              title={"Apakah Sudah Benar?"}
+              closeButton={true}
+            >
+              <div className="mt-2" style={{ fontSize: "1.2rem" }}>
+                <strong>Nama Penjual:</strong>{" "}
+                {formData.nama_lengkap === undefined
+                  ? ""
+                  : formData.nama_lengkap}
+              </div>
+              <div className="mt-2" style={{ fontSize: "1.2rem" }}>
+                <strong>Nama Barang:</strong>{" "}
+                {formData.nama_barang === undefined ? "" : formData.nama_barang}
+              </div>
+              <div className="mt-2" style={{ fontSize: "1.2rem" }}>
+                <strong>Alamat Penjemputan:</strong>{" "}
+                {formData.alamat === undefined ? "" : formData.alamat}
+              </div>
+              <div className="mt-2" style={{ fontSize: "1.2rem" }}>
+                <strong>Harga / Kg:</strong>{" "}
+                {formData.harga === undefined ? "" : formData.harga}
+              </div>
+              <div className="mt-2" style={{ fontSize: "1.2rem" }}>
+                <strong>Perkiraan Sampah (Kg):</strong>{" "}
+                {formData.jumlah === undefined ? "" : formData.jumlah}
+              </div>
+              <div
+                className="mt-2"
+                style={{
+                  fontWeight: 500,
+                  fontFamily: "inherit",
+                  fontSize: "1.2rem",
+                }}
+              >
+                <strong>Total Transaksi:</strong> Rp.
+                {formData.harga * formData.jumlah}
+              </div>
+              <div className="d-flex align-items-center justify-content-end gap-2 p-3">
+                <ButtonElement
+                  type="button"
+                  className="btn btn-danger"
+                  handleClick={hideModal}
+                >
+                  Batal
+                </ButtonElement>
+                <form onSubmit={handleSubmit}>
+                <ButtonElement
+                  type="submit"
+                  className="btn bg-success text-white"
+                  handleClick={handleSubmit}
+                >
+                  Kirim
+                </ButtonElement>
+                </form>
+              </div>
+            </Modal>
+          )}
         </div>
       </div>
     </>
