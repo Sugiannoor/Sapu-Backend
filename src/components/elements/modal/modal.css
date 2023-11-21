@@ -1,0 +1,20 @@
+modal-container {
+    .modal-content {
+      background-color: #ffffff;
+  
+      .modal_title {
+        font-size: 1.5rem !important;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 18px;
+        color: #116530;
+      }
+      .modal-descriptions {
+        color: #116530;
+        padding: 0 1rem;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 600;
+      }
+    }
+  }
