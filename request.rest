@@ -1,0 +1,29 @@
+GET http://localhost:5173/users
+authorization: Bearerey eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJJaXAiLCJlbWFpbCI6ImlpcDA4QGdtYWlsLmNvbSIsImlhdCI6MTcwMDg3MjQ0MywiZXhwIjoxNzAwODcyNTAzfQ.aUssccHySTHHo7Tia9wY1-rC0cBqoMAS1wLeItNGC30
+
+###
+POST http://localhost:5173/users
+Content-Type: application/json
+
+{
+    "name": "Iif",
+    "username": "iipp",
+    "email": "iip08@gmail.com",
+    "password": "123456",
+    "confPassword": "123456"
+}
+
+###
+POST http://localhost:5173/login
+Content-Type: application/json
+
+{
+    "email": "iip08@gmail.com",
+    "password": "123456"
+}
+
+###
+GET http://localhost:5173/token
+
+###
+DELETE http://localhost:5173/logout
